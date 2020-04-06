@@ -1,0 +1,55 @@
+{
+  "main": "index.ts",
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "web": "expo start --web",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ./ --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "expo": "~37.0.3",
+    "expo-updates": "~0.1.0",
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-native": "~0.61.4",
+    "react-native-gesture-handler": "~1.6.0",
+    "react-native-reanimated": "~1.7.0",
+    "react-native-screens": "~2.2.0",
+    "react-native-unimodules": "~0.9.0",
+    "react-native-web": "~0.11.7"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.8.6",
+    "@types/jest": "^25.2.1",
+    "@types/react": "~16.9.23",
+    "@types/react-native": "~0.61.17",
+    "@types/react-test-renderer": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "babel-preset-expo": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest-expo": "~37.0.0",
+    "prettier": "^2.0.4",
+    "react-test-renderer": "^16.13.1",
+    "typescript": "~3.8.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "collectCoverage": true
+  },
+  "private": true
+}
