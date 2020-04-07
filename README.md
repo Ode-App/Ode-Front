@@ -7,7 +7,6 @@ npm install expo-cli --global
 ```shell
 expo init my-new-project
 cd my-new-project
-expo start
 ```
 ### Run expo project
 ```shell
@@ -22,10 +21,65 @@ Install using:
 ```shell
 npm i -D eslint eslint-config-airbnb-base eslint-config-prettier eslint-plugin-import eslint-plugin-prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
+* Add react plugins
+```shell
+npm i -D eslint-plugin-react eslint-plugin-react-native
+```
+
 ### Configure eslint
 * Set script on package.json
 ```json
 "lint": "eslint ./ --ext .ts,.tsx"
+```
+* Set .eslintrc.json file
+
+```json
+{
+    "env": {
+        "es6": true,
+        "node": true,
+        "jest": true,
+        "react-native/react-native": true
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "prettier"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "prettier",
+        "react",
+        "react-native"
+    ],    
+    "rules": {
+        "@typescript-eslint/interface-name-prefix": "warn",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/generic-type-naming": "warn",
+        "@typescript-eslint/no-array-constructor": "warn",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
+        "class-methods-use-this": "off",
+        "react/jsx-uses-vars": "error",
+        "react/jsx-uses-react": "error"
+    }
+}
 ```
 
 ## Prettier
@@ -85,7 +139,11 @@ All application custom changes have to be set inside the `./src` folder followin
 # Running App
 
 ## Run expo
-Run Expo using the following script
+* Install dependencies
+```shell
+expo install
+```
+* Run Expo using the following script
 ```shell
 expo start
 ```
@@ -103,5 +161,3 @@ npm run lint
 ```
 npm run test
 ```
-
-
