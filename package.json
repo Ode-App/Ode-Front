@@ -5,7 +5,8 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./ --ext .js,.jsx"
   },
   "dependencies": {
     "expo": "~37.0.3",
@@ -21,12 +22,28 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
-    "babel-jest": "~25.2.6",
+    "babel-jest": "^25.2.6",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
     "jest": "~25.2.6",
+    "jest-expo": "^37.0.0",
     "react-test-renderer": "~16.9.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "collectCoverage": true,
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "private": true
 }
