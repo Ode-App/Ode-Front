@@ -1,0 +1,17 @@
+{
+  "name": "OdeApp",
+  "displayName": "OdeApp",
+  "expo": {
+    "name": "OdeApp",
+    "slug": "OdeApp",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
