@@ -143,6 +143,7 @@ All application custom changes have to be set inside the `./src` folder followin
 ```shell
 expo install
 ```
+
 * Run Expo using the following script
 ```shell
 expo start
