@@ -1,7 +1,7 @@
 import { I18nManager } from 'react-native';
+import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 import memoize from 'lodash.memoize';
-import * as Localization from 'expo-localization';
 
 import en from '../en.json';
 import es from '../es.json';
@@ -18,9 +18,10 @@ const saveTranslate = memoize(
   (key, config) => (config ? key + JSON.stringify(config) : key),
 );
 
-const idiomaSplit = Localization.locales ? Localization.locales[0].split('-') : 'en';
+const idiomaSplit = (Localization && Localization.locales && Localization.locales[0]) ? Localization.locales[0].split('-') : 'en';
 const fallback = { languageTag: 'en', isRTL: false };
-const deviceLanguage = { languageTag: idiomaSplit[0], isRTL: Localization.isRTL };
+const deviceLanguage = (Localization && Localization.isRTL)
+  ? { languageTag: idiomaSplit[0], isRTL: Localization.isRTL } : { languageTag: idiomaSplit[0], isRTL: false };
 const { languageTag, isRTL } = Object.prototype.hasOwnProperty.call(translationGetters, idiomaSplit[0])
   ? deviceLanguage : fallback;
 saveTranslate.cache.clear();
