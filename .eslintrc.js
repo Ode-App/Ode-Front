@@ -15,6 +15,7 @@ module.exports = {
       'no-case-declarations': 0,
       'import/prefer-default-export': 0,
       'linebreak-style': 0,
+      'max-len': ["error", { "code": 150 }],
       'no-use-before-define': ['error', { 'functions': true, 'classes': true, 'variables': false }]
     }
 }

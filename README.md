@@ -127,3 +127,15 @@ npm run lint
 ```
 npm run test
 ```
+
+# MultiLanguage usage
+* Import multilanguage
+```
+import { translate } from './translations/config/i18nConfig';
+```
+
+The function "translate" will return the characters in the correct language. 
+
+```
+translate('var'); 
+```
