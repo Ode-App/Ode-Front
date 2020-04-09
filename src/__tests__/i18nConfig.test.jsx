@@ -6,7 +6,6 @@ beforeEach(() => {
 
 describe('Translation', () => {
   it('Catalan location', () => {
-    jest.resetModules();
     jest.mock('expo-localization', () => ({
       locales: ['ca-Es'],
       isRTL: false,
@@ -18,7 +17,6 @@ describe('Translation', () => {
   });
 
   it('Spanish location', () => {
-    jest.resetModules();
     jest.mock('expo-localization', () => ({
       locales: ['es-Es'],
       isRTL: false,
@@ -30,7 +28,6 @@ describe('Translation', () => {
   });
 
   it('English location', () => {
-    jest.resetModules();
     jest.mock('expo-localization', () => ({
       locales: ['en-En'],
       isRTL: false,
@@ -42,7 +39,6 @@ describe('Translation', () => {
   });
 
   it('Fallback location', () => {
-    jest.resetModules();
     jest.mock('expo-localization', () => ({
       locales: ['ar-Es'],
       isRTL: false,
@@ -54,7 +50,6 @@ describe('Translation', () => {
   });
 
   it('Empty location', () => {
-    jest.resetModules();
     jest.unmock('expo-localization');
     /* eslint-disable global-require */
     const tr = require('../translations/config/i18nConfig');
