@@ -2,5 +2,6 @@
     "Welcome": "Welcome to Ode!",
     "Description": "Find partners trip and save money.",
     "Continue": "Start",
-    "IntPass":"Introduce your email and password to continue"
+    "IntPass":"Introduce your email and password to continue",
+    "Login":"Login"
 }

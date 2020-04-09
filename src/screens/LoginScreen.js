@@ -1,9 +1,12 @@
-
+import { translate } from '../translations/config/i18nConfig';
 import React, { Component } from 'react';
 import {
   StyleSheet, View, Image, Text, Button, Alert,
 } from 'react-native';
 import Theme from '../constants/Theme';
+import { Input } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 
 
@@ -27,13 +30,38 @@ export default class LoginScreen extends Component {
         />
         <Text style={styles.welcome}>
           <Text style={styles.welcome}>
-            Introduce tu email y password para empezar
+          {translate('IntPass')}
             {'\n'}
           </Text>
         </Text>
+                
+        <Input
+  placeholder='Email'
+  leftIcon={
+    <Icon
+         Icon='user'
+      size={19}
+      color='black'
+    />
+  }
+/>
+<Input
+  placeholder='Password'
+  leftIcon={
+    <Icon
+      Icon="sign-in"
+      size={19}
+      color='black'
+    />
+  }
+/>
         <Button
           title="Iniciar sesión" 
-          onPress={() => this.props.navigation.navigate('Login')}
+          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR}
+        />
+        <Button
+          title="Crear cuenta" 
+          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR_2}
         />
       </View>
     );
@@ -48,18 +76,9 @@ const styles = StyleSheet.create({
     height: 90,
   },
   welcome: {
-    fontSize: 34,
+    fontSize: 25,
     textAlign: 'center',
-    margin: 30,
+    margin: 25,
     color: Theme.COLORS.BLACK,
-  },
-
-  description: {
-    flex: 0.5,
-    fontSize: 17,
-    margin: 30,
-    textAlign: 'center',
-    color: Theme.COLORS.BLACK,
-  },
-
+  }
 });

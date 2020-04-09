@@ -7,6 +7,7 @@ import { translate } from '../translations/config/i18nConfig';
 
 
 
+
 export default class WelcomeScreen extends Component {
   render() {
     return (
@@ -37,7 +38,7 @@ export default class WelcomeScreen extends Component {
         </Text>
         <Button
           title={translate('Continue')}
-          onPress={() => this.props.navigation.navigate('Login')}
+          onPress={() => this.props.navigation.navigate('Login') } color= {Theme.COLORS.BUTTON_COLOR}
         />
       </View>
     );
