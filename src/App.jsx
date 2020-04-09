@@ -10,7 +10,7 @@ export default class App extends React.PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>{translate('goodMorning')}</Text>
+        <Text style={styles.welcome}>{translate('test')}</Text>
       </View>
     );
   }

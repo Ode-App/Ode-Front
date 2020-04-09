@@ -18,19 +18,26 @@ const saveTranslate = memoize(
   (key, config) => (config ? key + JSON.stringify(config) : key),
 );
 
-const idiomaSplit = (Localization && Localization.locales && Localization.locales[0]) ? Localization.locales[0].split('-') : 'en';
+function getLocales() {
+  return (Localization && Localization.locales && Localization.locales[0]) ? Localization.locales[0].split('-') : 'en';
+}
+function getIsRTL() {
+  return (Localization && Localization.isRTL) ? Localization.isRTL : false;
+}
+
+const languageSplit = getLocales();
 const fallback = { languageTag: 'en', isRTL: false };
-const deviceLanguage = (Localization && Localization.isRTL)
-  ? { languageTag: idiomaSplit[0], isRTL: Localization.isRTL } : { languageTag: idiomaSplit[0], isRTL: false };
-const { languageTag, isRTL } = Object.prototype.hasOwnProperty.call(translationGetters, idiomaSplit[0])
+const deviceLanguage = { languageTag: languageSplit[0], isRTL: getIsRTL() };
+const { languageTag, isRTL } = Object.prototype.hasOwnProperty.call(translationGetters, languageSplit[0])
   ? deviceLanguage : fallback;
 saveTranslate.cache.clear();
 I18nManager.forceRTL(isRTL);
 i18n.translations = { [languageTag]: translationGetters[languageTag]() };
 i18n.locale = languageTag;
 
+
 export function translate(name) {
   return saveTranslate(name);
 }
 
-export default translate;
+export default { translate };
