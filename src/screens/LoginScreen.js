@@ -20,7 +20,7 @@ export default class LoginScreen extends Component {
             flexDirection: 'column',
             justifyContent: 'space-around',
             alignItems: 'center',
-            marginVertical: 90,
+            marginVertical: 20,
           }
         }
       >
