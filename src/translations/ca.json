@@ -1,7 +1,11 @@
 {
+
     "Welcome": "Te damos la bienvenida a Ode!",
     "Description": "Encuentra compañeros de viaje y ahorra en tus desplazamientos.",
     "Continue": "Comencemos",
     "IntPass":"Introduce tu email y password para continuar",
     "Login":"Iniciar sesión"
+
+    "test": "Bon dia!"
+
 }
