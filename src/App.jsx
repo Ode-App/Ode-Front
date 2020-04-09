@@ -31,5 +31,3 @@
         );
         
         const AppContainer = createAppContainer(AppNavigator);
-        
-       

@@ -1,8 +1,13 @@
 {
-    "Welcome": "Benvingut a Ode!",
-    "Description": "Encuentra compañeros de viaje y ahorra en tus desplazamientos.",
-    "Continue": "Comencemos",
-    "Login":"Login",
+
+    "Welcome": "Et donem la benvinguda a Ode!",
+    "Description": "Troba companys de viatge i estalvia en els teus desplaçaments.",
+    "Continue": "Comencem",
+    "IntPass":"Introdueix el teu email i contrasenya per a continuar",
+    "Login":"Iniciar sessió",
     "FirstName": "Nom",
-    "LastName": "Cognom"
+    "LastName": "Cognom",
+
+    "test": "Bon dia!"
+
 }

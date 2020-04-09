@@ -1,4 +1,5 @@
 {
+
     "Welcome": "Welcome to Ode!",
     "Description": "Find partners trip and save money.",
     "Continue": "Start",
@@ -6,4 +7,6 @@
     "Login":"Login",
     "FirstName": "First Name",
     "LastName": "Last Name"
+    "test": "Good Morning!"
+
 }
