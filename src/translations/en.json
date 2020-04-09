@@ -5,7 +5,12 @@
     "Continue": "Start",
     "IntPass":"Introduce your email and password to continue",
     "Login":"Login",
-
+    "Rememail":"Put your email to reset your password",
+    "Back":"Back",
+    "ResetPass":"Reset password",
+    "ResetPassTitle":"Sent password",
+    "ResetPassbody":"Please, check your email. You will find instructions to reset your password.",
+   
     "test": "Good Morning!"
 
 }

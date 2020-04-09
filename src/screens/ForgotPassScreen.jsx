@@ -6,11 +6,7 @@ import {
 import Theme from '../constants/Theme';
 import { Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-
-
-
-export default class LoginScreen extends Component {
+export default class ForgotPassScreen extends Component {
   render() {
     return (
       <View style={
@@ -30,7 +26,7 @@ export default class LoginScreen extends Component {
         />
         <Text style={styles.welcome}>
           <Text style={styles.welcome}>
-          {translate('IntPass')}
+          {translate('Rememail')}
             {'\n'}
           </Text>
         </Text>
@@ -46,7 +42,7 @@ export default class LoginScreen extends Component {
   }
 />
 <Input
-  placeholder='Password'
+  placeholder='Confirm Email'
   leftIcon={
     <Icon
       Icon="sign-in"
@@ -55,13 +51,21 @@ export default class LoginScreen extends Component {
     />
   }
 />
+        
         <Button
-          title="Iniciar sesión" 
-          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR}
+          title={translate('ResetPass')}
+          onPress={() => Alert.alert(
+            translate('ResetPassTitle'),
+            translate('ResetPassbody'),
+            [
+              {text: 'OK' ,onPress: () =>this.props.navigation.navigate('Login')},
+            ],
+            { cancelable: false }
+          )} color= {Theme.COLORS.BUTTON_COLOR_2}
         />
         <Button
-          title="Crear cuenta" 
-          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR_2}
+          title={translate('Back')}
+          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR}
         />
       </View>
     );

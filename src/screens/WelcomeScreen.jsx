@@ -4,10 +4,6 @@ import {
 } from 'react-native';
 import Theme from '../constants/Theme';
 import { translate } from '../translations/config/i18nConfig';
-
-
-
-
 export default class WelcomeScreen extends Component {
   render() {
     return (
@@ -44,7 +40,6 @@ export default class WelcomeScreen extends Component {
     );
   };
 };
-
 
 const styles = StyleSheet.create({
 

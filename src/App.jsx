@@ -3,7 +3,7 @@
         import { createStackNavigator } from "react-navigation-stack";
         import WelcomeScreen from './screens/WelcomeScreen';
         import LoginScreen from './screens/LoginScreen';
-        
+        import ForgotPassScreen from './screens/ForgotPassScreen';
         
         export default class App extends React.Component {
           render() {
@@ -19,6 +19,9 @@
           },
           Login: {
             screen: LoginScreen, navigationOptions: {headerShown: false}, 
+          },
+          ForgotPass: {
+            screen: ForgotPassScreen, navigationOptions: {headerShown: false}, 
           }
         },
         {

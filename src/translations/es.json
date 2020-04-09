@@ -5,7 +5,11 @@
     "Continue": "Comencemos",
     "IntPass":"Introduce tu email y password para continuar",
     "Login":"Iniciar sesión",
-  
+    "Rememail":"Introduce tu email para resetar el password",
+    "Back":"Atras",
+    "ResetPass":"Restablecer contraseña",
+    "ResetPassTitle":"Contraseña enviada",
+    "ResetPassbody":"Por favor, revise su correo electrónico. Se ha enviado un mail con las instrucciones para resetear el password",
     "test": "Buenos dias!"
 
 }
