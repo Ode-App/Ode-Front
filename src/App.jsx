@@ -3,6 +3,7 @@
         import { createStackNavigator } from "react-navigation-stack";
         import WelcomeScreen from './screens/WelcomeScreen';
         import LoginScreen from './screens/LoginScreen';
+        import RegisterScreen from './screens/RegisterScreen';
         
         
         export default class App extends React.Component {
@@ -19,6 +20,9 @@
           },
           Login: {
             screen: LoginScreen, navigationOptions: {headerShown: false}, 
+          },
+          Register: {
+            screen: RegisterScreen, navigationOptions: {headerShown: false},
           }
         },
         {

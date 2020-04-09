@@ -34,7 +34,7 @@ export default class LoginScreen extends Component {
             {'\n'}
           </Text>
         </Text>
-                
+
         <Input
   placeholder='Email'
   leftIcon={
@@ -46,7 +46,18 @@ export default class LoginScreen extends Component {
   }
 />
 <Input
-  placeholder='Password'
+  placeholder={translate('FirstName')}
+  leftIcon={
+    <Icon
+      Icon="sign-in"
+      size={19}
+      color='black'
+    />
+  }
+/>
+
+<Input
+  placeholder={translate('LastName')}
   leftIcon={
     <Icon
       Icon="sign-in"
@@ -56,12 +67,8 @@ export default class LoginScreen extends Component {
   }
 />
         <Button
-          title="Iniciar sesión" 
-          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR}
-        />
-        <Button
           title="Crear cuenta"
-          onPress={() => this.props.navigation.navigate('Register')} color= {Theme.COLORS.BUTTON_COLOR}
+          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR_2}
         />
       </View>
     );
