@@ -3,6 +3,7 @@ import {
   StyleSheet, View, Image, Text, Button, 
 } from 'react-native';
 import Theme from '../constants/Theme';
+import { translate } from '../translations/config/i18nConfig';
 
 
 
@@ -25,17 +26,17 @@ export default class WelcomeScreen extends Component {
           source={require('../assets/img/icon.jpg')}
         />
         <Text style={styles.welcome}>
-          <Text style={styles.welcome}>Te damos la bienvenida a Ode!
+          <Text style={styles.welcome}>{translate('Welcome')}
             {'\n'}
           </Text>
           <Text style={styles.description}>
             {'\n'}
-            Encuentra compañeros de viaje y ahorra en tus desplazamientos.
+            {translate('Description')}
             {' '}
           </Text>
         </Text>
         <Button
-          title="Comencemos" 
+          title={translate('Continue')}
           onPress={() => this.props.navigation.navigate('Login')}
         />
       </View>
