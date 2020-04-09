@@ -24,6 +24,9 @@ export default class LoginScreen extends Component {
           }
         }
       >
+          <Icon name="arrow-left" size={16} onPress={() => this.props.navigation.navigate('Login')} color="#000" style={styles.icon}
+
+          />
         <Image
           style={styles.tinyLogo}
           source={require('../assets/img/icon.jpg')}
@@ -87,5 +90,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 25,
     color: Theme.COLORS.BLACK,
-  }
+  },
+    icon: {
+       fontSize: 25,
+        position: 'absolute',
+        left: 2, // Keep some space between your left border and Image
+        top: -50, // Keep some space between your left border and Image
+         margin: 10,
+
+        right: 0,
+
+        bottom: 0
+    },
+
 });
