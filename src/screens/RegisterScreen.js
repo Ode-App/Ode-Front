@@ -1,7 +1,7 @@
 import {translate} from '../translations/config/i18nConfig';
 import React, {Component} from 'react';
 import {
-    StyleSheet, View, Image, Text, Button, Alert,
+    StyleSheet, View, Image, Text, Button, Alert, TouchableOpacity
 } from 'react-native';
 import Theme from '../constants/Theme';
 import {Input} from 'react-native-elements';
@@ -14,7 +14,7 @@ export default class LoginScreen extends Component {
             <View style={
                 {
                     flex: 1,
-                    marginTop: 80,
+                    marginTop: 30,
                     flexDirection: 'column',
                     justifyContent: 'space-around',
                     alignItems: 'center',
@@ -22,23 +22,17 @@ export default class LoginScreen extends Component {
                 }
             }
             >
-                <Icon name="arrow-left"
-                      size={16} onPress={() => this.props.navigation.navigate('Login')}
-                      color="#000"
-                      style={styles.icon}
-                />
                 <Image
                     style={styles.tinyLogo}
                     source={require('../assets/img/icon.jpg')}
                 />
+
                 <Text style={styles.welcome}>
                     <Text style={styles.welcome}>
                         {translate('SignUpText')}
                         {'\n'}
                     </Text>
                 </Text>
-
-
                 <Input
                     placeholder={translate('FirstName')}
                     leftIcon={
@@ -61,7 +55,6 @@ export default class LoginScreen extends Component {
                     }
                 />
 
-
                 <Input
                     placeholder='Email'
                     leftIcon={
@@ -73,7 +66,6 @@ export default class LoginScreen extends Component {
                     }
                 />
 
-
                 <Input
                     placeholder={translate('Password')}
                     leftIcon={
@@ -84,10 +76,22 @@ export default class LoginScreen extends Component {
                         />
                     }
                 />
-                <Button
+                <TouchableOpacity
                     title="Crear cuenta"
-                    onPress={() => this.props.navigation.navigate('Login')} color={Theme.COLORS.BUTTON_COLOR_2}
-                />
+                    style={styles.btn_confirm}
+                    onPress={() => this.props.navigation.navigate('RegisterOk')}
+                >
+                    <Text textAnchor="middle" style={styles.btn_text}>{translate('SignUpText')}</Text>
+
+                </TouchableOpacity>
+                <TouchableOpacity
+                    title="Cancel"
+                    style={styles.btn_cancel}
+                    onPress={() => this.props.navigation.navigate('Login')}
+                >
+                    <Text textAnchor="middle" style={styles.btn_text}>{translate('Cancel')}</Text>
+                </TouchableOpacity>
+
             </View>
         );
     };
@@ -110,12 +114,37 @@ const styles = StyleSheet.create({
         fontSize: 25,
         position: 'absolute',
         left: 2, // Keep some space between your left border and Image
-        top: -50, // Keep some space between your left border and Image
+        top: -10, // Keep some space between your left border and Image
         margin: 10,
 
         right: 0,
 
         bottom: 0
     },
+    btn_confirm: {
+        backgroundColor: Theme.COLORS.BACKGROUND,
+        borderColor: 'black',
+        borderWidth: .3,
+        borderRadius: 10,
+
+        width: 200,
+        height: 50
+
+    },
+    btn_text: {
+        flex: 1,
+        fontSize: 25,
+        textAlign: 'center',
+        color: Theme.COLORS.WHITE,
+        textAlignVertical: "center"
+    },
+    btn_cancel: {
+        backgroundColor: Theme.COLORS.WARNING,
+        borderColor: 'black',
+        borderWidth: .3,
+        borderRadius: 10,
+        width: 200,
+        height: 50
+    }
 
 });

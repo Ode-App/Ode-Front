@@ -9,6 +9,7 @@
     "LastName": "Last Name",
     "Password": "Password",
     "test": "Good Morning!",
-    "SignUpText": "Create Account"
+    "SignUpText": "Create Account",
+    "Cancel": "Cancel"
 
 }

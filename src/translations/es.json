@@ -9,6 +9,7 @@
     "LastName": "Apellido",
     "Password": "Contraseña",
     "test": "Buenos dias!",
-    "SignUpText": "Crear cuenta"
+    "SignUpText": "Crear cuenta",
+    "Cancel": "Cancelar"
 
 }

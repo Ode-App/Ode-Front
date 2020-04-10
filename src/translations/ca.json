@@ -9,6 +9,7 @@
     "LastName": "Cognom",
     "Password": "Contrasenya",
     "SignUpText": "Crear compte",
+    "Cancel": "Cancelar",
     "test": "Bon dia!"
 
 }
