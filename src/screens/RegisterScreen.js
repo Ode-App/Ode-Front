@@ -38,16 +38,7 @@ export default class LoginScreen extends Component {
                     </Text>
                 </Text>
 
-                <Input
-                    placeholder='Email'
-                    leftIcon={
-                        <Icon
-                            Icon='user'
-                            size={19}
-                            color='black'
-                        />
-                    }
-                />
+
                 <Input
                     placeholder={translate('FirstName')}
                     leftIcon={
@@ -69,6 +60,19 @@ export default class LoginScreen extends Component {
                         />
                     }
                 />
+
+
+                <Input
+                    placeholder='Email'
+                    leftIcon={
+                        <Icon
+                            Icon='user'
+                            size={19}
+                            color='black'
+                        />
+                    }
+                />
+
 
                 <Input
                     placeholder={translate('Password')}
