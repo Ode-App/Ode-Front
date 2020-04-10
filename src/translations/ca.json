@@ -3,11 +3,12 @@
     "Welcome": "Et donem la benvinguda a Ode!",
     "Description": "Troba companys de viatge i estalvia en els teus desplaçaments.",
     "Continue": "Comencem",
-    "IntPass":"Introdueix el teu email i contrasenya per a continuar",
+    "IntPass":"Introdueix el teu email i contrasenya per continuar",
     "Login":"Iniciar sessió",
     "FirstName": "Nom",
     "LastName": "Cognom",
-
+    "Password": "Contrasenya",
+    "SignUpText": "Crear compte",
     "test": "Bon dia!"
 
 }

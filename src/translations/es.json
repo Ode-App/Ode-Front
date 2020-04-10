@@ -7,6 +7,8 @@
     "Login":"Iniciar sesión",
     "FirstName": "Nombre",
     "LastName": "Apellido",
-    "test": "Buenos dias!"
+    "Password": "Contraseña",
+    "test": "Buenos dias!",
+    "SignUpText": "Crear cuenta"
 
 }

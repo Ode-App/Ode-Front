@@ -33,7 +33,7 @@ export default class LoginScreen extends Component {
                 />
                 <Text style={styles.welcome}>
                     <Text style={styles.welcome}>
-                        {translate('IntPass')}
+                        {translate('SignUpText')}
                         {'\n'}
                     </Text>
                 </Text>
@@ -61,6 +61,17 @@ export default class LoginScreen extends Component {
 
                 <Input
                     placeholder={translate('LastName')}
+                    leftIcon={
+                        <Icon
+                            Icon="sign-in"
+                            size={19}
+                            color='black'
+                        />
+                    }
+                />
+
+                <Input
+                    placeholder={translate('Password')}
                     leftIcon={
                         <Icon
                             Icon="sign-in"

@@ -6,7 +6,9 @@
     "IntPass":"Introduce your email and password to continue",
     "Login":"Login",
     "FirstName": "First Name",
-    "LastName": "Last Name"
-    "test": "Good Morning!"
+    "LastName": "Last Name",
+    "Password": "Password",
+    "test": "Good Morning!",
+    "SignUpText": "Create Account"
 
 }
