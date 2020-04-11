@@ -1,11 +1,12 @@
-import { translate } from '../translations/config/i18nConfig';
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, Image, Text, Button,
+  StyleSheet, View, Image, Text, Button,TouchableOpacity,
 } from 'react-native';
-import Theme from '../constants/Theme';
 import { Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Theme from '../constants/Theme';
+import { translate } from '../translations/config/i18nConfig';
+
 export default class LoginScreen extends Component {
   render() {
     return (
@@ -26,47 +27,55 @@ export default class LoginScreen extends Component {
         />
         <Text style={styles.welcome}>
           <Text style={styles.welcome}>
-          {translate('IntPass')}
+            {translate('IntPass')}
             {'\n'}
           </Text>
         </Text>
-                
+
         <Input
-  placeholder='Email'
-  leftIcon={
-    <Icon
-         Icon='user'
-      size={19}
-      color='black'
-    />
-  }
-/>
-<Input
-  placeholder='Password'
-  leftIcon={
-    <Icon
-      Icon="sign-in"
-      size={19}
-      color='black'
-    />
-  }
-/>
-        <Button
-          title="Iniciar sesión" 
-          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR}
+          placeholder="Email"
+          leftIcon={(
+            <Icon
+              Icon="user"
+              size={19}
+              color="black"
+            />
+  )}
         />
-        <Button
-          title="Crear cuenta" 
-          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR_2}
+        <Input
+          placeholder="Password"
+          leftIcon={(
+            <Icon
+              Icon="sign-in"
+              size={19}
+              color="black"
+            />
+  )}
         />
-        <Button
-          title="Olvido contraseña" 
-          onPress={() => this.props.navigation.navigate('ForgotPass')} color= {Theme.COLORS.BUTTON_COLOR_2}
-        />
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('ForgotPass')}>
+              <View style={styles.center}>
+                <Text style={styles.link_text}>{translate('ResetPass')}</Text>
+              </View>
+            </TouchableOpacity>
+
+        <View style={styles.fixToText}>
+          
+          <Button
+            title="Iniciar sesión"
+            onPress={() => this.props.navigation.navigate('Main')}
+            color={Theme.COLORS.BUTTON_COLOR}
+          />
+        </View>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
+              <View style={styles.center}>
+                <Text style={styles.link_text}>{translate('NewAccount')}</Text>
+              </View>
+            </TouchableOpacity>
       </View>
     );
-  };
-};
+  }
+}
 
 
 const styles = StyleSheet.create({
@@ -80,5 +89,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 25,
     color: Theme.COLORS.BLACK,
-  }
+  },
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
