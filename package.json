@@ -6,7 +6,8 @@
     "web": "expo start --web",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ./ --ext .js,.jsx --fix"
+    "lint": "eslint ./ --ext .js,.jsx --fix",
+    "swagger": "openapi-generator generate -i http://ode-back-staging.herokuapp.com/api-docs.json -g javascript -o api-client"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@openapitools/openapi-generator-cli": "^1.0.12-4.3.0",
     "babel-jest": "^25.2.6",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
@@ -40,9 +42,11 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
+    "expect.js": "^0.3.1",
     "jest": "~25.2.6",
     "jest-expo": "^37.0.0",
-    "react-test-renderer": "~16.9.0"
+    "react-test-renderer": "~16.9.0",
+    "superagent": "^5.2.2"
   },
   "jest": {
     "preset": "jest-expo",

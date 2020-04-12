@@ -139,3 +139,11 @@ The function "translate" will return the characters in the correct language.
 ```
 translate('var'); 
 ```
+
+# Generate API client
+
+Generate API cliente using the swagger JSON of the backend. It is generated using swagger codegen with `@openapitools/openapi-generator-cli` dependency.
+
+In order to regenerate it, run the `npm run swagger` script. The Swagger json path can be changed if needed.
+
+It will generate the models and the API calls on the folder `api-client`.
