@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   StyleSheet, View, Image, Text, Button,TouchableOpacity,
 } from 'react-native';
-import { Input } from 'react-native-elements';
+import { Input, SocialIcon } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Theme from '../constants/Theme';
 import { translate } from '../translations/config/i18nConfig';
@@ -58,9 +58,7 @@ export default class LoginScreen extends Component {
                 <Text style={styles.link_text}>{translate('ResetPass')}</Text>
               </View>
             </TouchableOpacity>
-
         <View style={styles.fixToText}>
-          
           <Button
             title="Iniciar sesión"
             onPress={() => this.props.navigation.navigate('Main')}
@@ -71,8 +69,20 @@ export default class LoginScreen extends Component {
               <View style={styles.center}>
                 <Text style={styles.link_text}>{translate('NewAccount')}</Text>
               </View>
-            </TouchableOpacity>
+        </TouchableOpacity>
+        <View style={{ flexDirection: 'row'}}>
+        <SocialIcon
+          type='twitter'
+        />
+        <SocialIcon
+          type='facebook'
+        />
+        <SocialIcon
+          type='google'
+        />
       </View>
+      </View>
+      
     );
   }
 }

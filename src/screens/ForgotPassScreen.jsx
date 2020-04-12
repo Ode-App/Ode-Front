@@ -41,16 +41,7 @@ export default class ForgotPassScreen extends Component {
     />
   }
 />
-<Input
-  placeholder='Confirm Email'
-  leftIcon={
-    <Icon
-      Icon="sign-in"
-      size={19}
-      color='black'
-    />
-  }
-/>
+
         
         <Button
           title={translate('ResetPass')}
@@ -61,11 +52,11 @@ export default class ForgotPassScreen extends Component {
               {text: 'OK' ,onPress: () =>this.props.navigation.navigate('Login')},
             ],
             { cancelable: false }
-          )} color= {Theme.COLORS.BUTTON_COLOR_2}
+          )} color= {Theme.COLORS.BUTTON_COLOR}
         />
         <Button
           title={translate('Back')}
-          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR}
+          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR_2}
         />
       </View>
     );
