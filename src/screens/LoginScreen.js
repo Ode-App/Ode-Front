@@ -57,7 +57,7 @@ export default class LoginScreen extends Component {
 />
         <Button
           title="Iniciar sesión" 
-          onPress={() => this.props.navigation.navigate('Login')} color= {Theme.COLORS.BUTTON_COLOR}
+          onPress={() => this.props.navigation.navigate('Main')} color= {Theme.COLORS.BUTTON_COLOR}
         />
         <Button
           title="Crear cuenta" 

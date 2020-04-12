@@ -9,7 +9,7 @@
     "lint": "eslint ./ --ext .js,.jsx --fix"
   },
   "dependencies": {
-    "@react-native-community/masked-view": "^0.1.7",
+    "@react-native-community/masked-view": "^0.1.6",
     "expo": "^37.0.6",
     "expo-localization": "^8.1.0",
     "expo-updates": "~0.1.0",
@@ -20,6 +20,7 @@
     "react-native": "~0.61.5",
     "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "^1.6.1",
+    "react-native-maps": "^0.26.1",
     "react-native-reanimated": "^1.7.1",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-safe-area-view": "^1.0.0",
@@ -42,6 +43,7 @@
     "eslint-plugin-react": "^7.19.0",
     "jest": "~25.2.6",
     "jest-expo": "^37.0.0",
+    "react-native-google-places-autocomplete": "^1.4.1",
     "react-test-renderer": "~16.9.0"
   },
   "jest": {
