@@ -37,8 +37,14 @@ export default class LoginScreen extends Component {
 
                 </Icon>
 
+                <TouchableOpacity
+                    title="Back home"
+                    style={styles.btn_confirm}
+                    onPress={() => this.props.navigation.navigate('Login')}
+                >
+                    <Text textAnchor="middle" style={styles.btn_text}>{translate('BackHome')}</Text>
 
-
+                </TouchableOpacity>
 
             </View>
         );
@@ -61,7 +67,24 @@ const styles = StyleSheet.create({
     checkIcon: {
         top: -100,
         left: 5,
-    }
+    },
+    btn_confirm: {
+        backgroundColor: Theme.COLORS.BACKGROUND,
+        borderColor: 'black',
+        borderWidth: .3,
+        borderRadius: 10,
+
+        width: 200,
+        height: 50
+
+    },
+    btn_text: {
+        flex: 1,
+        fontSize: 25,
+        textAlign: 'center',
+        color: Theme.COLORS.WHITE,
+        textAlignVertical: "center"
+    },
 
 
 
