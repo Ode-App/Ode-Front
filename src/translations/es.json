@@ -10,6 +10,6 @@
     "Password": "Contraseña",
     "test": "Buenos dias!",
     "SignUpText": "Crear cuenta",
-    "Cancel": "Cancelar"
-
+    "Cancel": "Cancelar",
+    "SingUpDone": "Tu cuenta ha sido creada correctamente !",
 }

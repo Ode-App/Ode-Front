@@ -27,10 +27,15 @@ export default class LoginScreen extends Component {
 
                 <Text style={styles.welcome}>
                     <Text style={styles.welcome}>
-                        {translate('SignUpText')}
+                        {translate('SingUpDone')}
                         {'\n'}
                     </Text>
                 </Text>
+
+
+                 <Icon name="check" size={32} color="green"  style={styles.checkIcon}>
+
+                </Icon>
 
 
 
@@ -53,6 +58,11 @@ const styles = StyleSheet.create({
         margin: 25,
         color: Theme.COLORS.BLACK,
     },
+    checkIcon: {
+        top: -100,
+        left: 5,
+    }
+
 
 
 });
