@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import MapView from 'react-native-maps';
 import Search from '../components/Search';
+import {getMarkers} from '../components/MarkerController';
 import CustomMarker from '../components/CustomMarker';
 
 
-
+const tilte = 'Destinación';
 
 
 export default class MainScreen extends Component {
     state = {
         region: null,
+        destination: null,
+        markers: []
     }
     async componentDidMount() {
         navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
@@ -20,7 +23,8 @@ export default class MainScreen extends Component {
                     longitude,
                     latitudeDelta: 0.03,
                     longitudeDelta: 0.03,
-                }
+                },
+                marker: null
             })
          }
     )}
@@ -33,12 +37,20 @@ export default class MainScreen extends Component {
                     region={region}
                     showsUserLocation
                     loadingEnabled
+                    onPress={ (event) => this.setState({destination: event.nativeEvent.coordinate, markers: getMarkers(event.nativeEvent.coordinate, this.title, true)})}
+                    >
+                    {
+                        this.state.destination &&
+                        this.state.markers &&
+                        this.state.markers.map((marker, i) => ( 
+                            <CustomMarker 
+                                key= {i}
+                                latitude= {marker.coordinates.latitude} 
+                                longitude= {marker.coordinates.longitude} 
+                                title= {marker.title} 
+                                destination= {marker.destination} /> ))
+                    }
                     
-                >
-                    
-                    <CustomMarker  latitude = {41.387010} longitude = {2.170047}  title={'Prueba'} destination = {true} />
-                    <CustomMarker  latitude = {41.3887901} longitude = {2.1589899}  title={'Prueba2'} destination = {false} />
-                                      
                 </MapView>
             </View>
         )

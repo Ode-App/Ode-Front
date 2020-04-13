@@ -5,11 +5,9 @@ export default class Search extends Component {
     render() {
         return (
             <GooglePlacesAutocomplete
-                placeholder="Search"
+                placeholder="  ¿A dónde quieres ir?"
                 minLength={4}
                 placeholderTextColor="#333"
-                currentLocation={true} 
-                currentLocationLabel="Current location"
                 nearbyPlacesAPI='GooglePlacesSearch'
                 /*query={{
                     key: 'xxxxxxx',
