@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, Image, Text, Button,TouchableOpacity,
+  StyleSheet, View, Image, Text, Button,TouchableOpacity, ScrollView
 } from 'react-native';
 import { Input, SocialIcon } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -18,6 +18,7 @@ export default class LoginScreen extends Component {
             justifyContent: 'space-around',
             alignItems: 'center',
             marginVertical: 20,
+            backgroundColor: '#FFFFFF',
           }
         }
       >
@@ -82,7 +83,6 @@ export default class LoginScreen extends Component {
         />
       </View>
       </View>
-      
     );
   }
 }

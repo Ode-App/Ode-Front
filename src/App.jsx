@@ -4,6 +4,8 @@ import { createStackNavigator } from 'react-navigation-stack';
 import WelcomeScreen from './screens/WelcomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import ForgotPassScreen from './screens/ForgotPassScreen';
+import MainScreen from './screens/MainScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 export default class App extends React.Component {
   render() {
@@ -22,6 +24,12 @@ const AppNavigator = createStackNavigator(
     },
     ForgotPass: {
       screen: ForgotPassScreen, navigationOptions: { headerShown: false },
+    },
+    Profile: {
+      screen: ProfileScreen,
+    },
+    Main: {
+      screen: MainScreen, navigationOptions: { headerShown: false },
     },
    
   },

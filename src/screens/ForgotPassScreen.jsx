@@ -6,6 +6,7 @@ import {
 import Theme from '../constants/Theme';
 import { Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default class ForgotPassScreen extends Component {
   render() {
     return (
