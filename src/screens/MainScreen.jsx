@@ -5,13 +5,12 @@ import { StyleSheet,
     Animated,
     Dimensions, } from 'react-native';
 import MapView from 'react-native-maps';
-import Search from '../components/Search';
 import {getMarkers} from '../components/MarkerController';
 import CustomMarker from '../components/CustomMarker';
 
 
-const tilte = 'Destinación';
-const { width, height } = Dimensions.get("window");
+const tilteDestination = 'Destinación';
+const { height } = Dimensions.get("window");
 const CARD_HEIGHT = height / 3;
 const CARD_WIDTH = CARD_HEIGHT ;
 
@@ -53,7 +52,7 @@ export default class MainScreen extends Component {
                             <CustomMarker 
                                 latitude= {destination.latitude} 
                                 longitude= {destination.longitude}
-                                title= {this.title}
+                                title= {tilteDestination}
                                 destination= {true} /> 
                     }
                     {
@@ -85,7 +84,7 @@ export default class MainScreen extends Component {
                         { useNativeDriver: true }
                     )}
                     style={styles.scrollView}
-                    contentContainerStyle={styles.endPadding}
+                    contentContainerStyle={styles.paddingEnd}
                     >
                     {this.state.markers.map((marker, index) => (
                         <View style={styles.card} key={index}>
@@ -107,18 +106,15 @@ export default class MainScreen extends Component {
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
     scrollView: {
       position: "absolute",
       bottom: 0,
       left: 0,
-      right: 0,
-      paddingVertical: 0,
+      right: 0
     },
-    endPadding: {
-      paddingRight: 0,
+    paddingEnd: {
+      paddingRight: 10,
+      paddingLeft: 10
     },
     card: {
       padding: 10,
@@ -132,12 +128,6 @@ const styles = StyleSheet.create({
       width: CARD_WIDTH,
       overflow: "hidden",
     },
-    cardImage: {
-      flex: 3,
-      width: "100%",
-      height: "100%",
-      alignSelf: "center",
-    },
     textContent: {
       flex: 1,
     },
@@ -149,26 +139,7 @@ const styles = StyleSheet.create({
     cardDescription: {
       fontSize: 12,
       color: "#444",
-    },
-    markerWrap: {
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    marker: {
-      width: 8,
-      height: 8,
-      borderRadius: 4,
-      backgroundColor: "rgba(130,4,150, 0.9)",
-    },
-    ring: {
-      width: 24,
-      height: 24,
-      borderRadius: 12,
-      backgroundColor: "rgba(130,4,150, 0.3)",
-      position: "absolute",
-      borderWidth: 1,
-      borderColor: "rgba(130,4,150, 0.5)",
-    },
+    }
   });
     
 
