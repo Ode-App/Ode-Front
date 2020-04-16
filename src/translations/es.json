@@ -1,5 +1,6 @@
 {
 
+    "test": "Buenos dias!",
     "Welcome": "Te damos la bienvenida a Ode!",
     "Description": "Encuentra compañeros de viaje y ahorra en tus desplazamientos.",
     "Continue": "Comencemos",
@@ -11,6 +12,11 @@
     "ResetPassTitle":"Contraseña enviada",
     "ResetPassbody":"Por favor, revise su correo electrónico. Se ha enviado un mail con las instrucciones para resetear el password",
     "NewAccount":"¿Nuevo en Ode? ¡Crea una cuenta aquí!",
-    "test": "Buenos dias!"
-
+    "FirstName": "Nombre",
+    "LastName": "Apellido",
+    "Password": "Contraseña",
+    "SignUpText": "Crear cuenta",
+    "Cancel": "Cancelar",
+    "SingUpDone": "¡Tu cuenta ha sido creada correctamente!",
+    "BackHome": "Volver al inicio"
 }

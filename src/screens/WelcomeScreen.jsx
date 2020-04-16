@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {
+
   StyleSheet, View, Image, Text, Button, TouchableOpacity,
+
 } from 'react-native';
 import Theme from '../constants/Theme';
 import { translate } from '../translations/config/i18nConfig';
@@ -24,8 +26,10 @@ export default class WelcomeScreen extends Component {
           source={require('../assets/img/icon.jpg')}
         />
         <Text style={styles.welcome}>
+
           <Text style={styles.welcome}>
             {translate('Welcome')}
+
             {'\n'}
           </Text>
           <Text style={styles.description}>

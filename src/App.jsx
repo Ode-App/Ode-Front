@@ -6,6 +6,8 @@ import LoginScreen from './screens/LoginScreen';
 import ForgotPassScreen from './screens/ForgotPassScreen';
 import MainScreen from './screens/MainScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import RegisterOkScreen from './screens/RegisterOkScreen';
 
 export default class App extends React.Component {
   render() {
@@ -31,6 +33,12 @@ const AppNavigator = createStackNavigator(
     Main: {
       screen: MainScreen, navigationOptions: { headerShown: false },
     },
+    Register: {
+      screen: RegisterScreen, navigationOptions: {headerShown: false},
+    },
+    RegisterOk: {
+      screen: RegisterOkScreen, navigationOptions: {headerShown: false},
+    },  
    
   },
   {

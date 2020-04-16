@@ -1,11 +1,11 @@
+import { translate } from '../translations/config/i18nConfig';
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, Image, Text, Button,TouchableOpacity, ScrollView
+  StyleSheet, View, Image, Text, Button, Alert,TouchableOpacity, ScrollView
 } from 'react-native';
+import Theme from '../constants/Theme';
 import { Input, SocialIcon } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Theme from '../constants/Theme';
-import { translate } from '../translations/config/i18nConfig';
 
 export default class LoginScreen extends Component {
   render() {
@@ -66,7 +66,7 @@ export default class LoginScreen extends Component {
             color={Theme.COLORS.BUTTON_COLOR}
           />
         </View>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
               <View style={styles.center}>
                 <Text style={styles.link_text}>{translate('NewAccount')}</Text>
               </View>
@@ -86,8 +86,6 @@ export default class LoginScreen extends Component {
     );
   }
 }
-
-
 const styles = StyleSheet.create({
 
   tinyLogo: {

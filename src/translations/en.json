@@ -1,5 +1,5 @@
 {
-
+    "test": "Good Morning!",
     "Welcome": "Welcome to Ode!",
     "Description": "Find partners trip and save money.",
     "Continue": "Start",
@@ -11,6 +11,11 @@
     "ResetPassTitle":"Sent password",
     "ResetPassbody":"Please, check your email. You will find instructions to reset your password.",
     "NewAccount":"New in Ode? Create an account here",
-    "test": "Good Morning!"
-
+    "FirstName": "First Name",
+    "LastName": "Last Name",
+    "Password": "Password",
+    "SignUpText": "Create Account",
+    "Cancel": "Cancel",
+    "SingUpDone": "Your account have been created successfully",
+    "BackHome": "Back Home"
 }
