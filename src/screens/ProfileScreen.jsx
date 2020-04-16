@@ -23,6 +23,9 @@ const list = [
   {
     title: 'Settings',
     icon: 'settings'
+  }, {
+    title: 'Upgrade account',
+    icon: 'call-made'
   },
   
 ]
@@ -37,7 +40,7 @@ export default class MainScreen extends Component {
           <Avatar
             rounded
             size="large"
-            showEditButton
+           /* showEditButton*/
             title="SB"
             source={{
               uri: 'https://media-exp1.licdn.com/dms/image/C4D03AQGysqfNLtxpBQ/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=SDzkxqpWyMDr5SJPxTkurjYQK6XPfkbg4D-Kipxmiic',
@@ -60,14 +63,6 @@ export default class MainScreen extends Component {
           ))
         }
         </View>
-        <View>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('ForgotPass')}>
-              <View style={styles.About}>
-                <Text style={styles.link_text}>{"About Ode"}</Text>
-                <Text style={styles.link_text}>{"version =0.0.1"}</Text>
-              </View>
-            </TouchableOpacity>
-        </View>
       </View>
       
     );
@@ -83,11 +78,6 @@ const styles = StyleSheet.create({
   avatar: {
     marginTop: 60,
     justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-  About: {
-    marginTop: 60,
-    justifyContent: 'space-around',
     alignItems: 'center',
   },
   welcome: {
