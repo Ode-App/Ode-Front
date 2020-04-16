@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, Image, Text, Button, 
+  StyleSheet, View, Image, Text, Button,
 } from 'react-native';
 import Theme from '../constants/Theme';
 import { translate } from '../translations/config/i18nConfig';
-
-
 
 
 export default class WelcomeScreen extends Component {
@@ -27,7 +25,8 @@ export default class WelcomeScreen extends Component {
           source={require('../assets/img/icon.jpg')}
         />
         <Text style={styles.welcome}>
-          <Text style={styles.welcome}>{translate('Welcome')}
+          <Text style={styles.welcome}>
+            {translate('Welcome')}
             {'\n'}
           </Text>
           <Text style={styles.description}>
@@ -38,12 +37,13 @@ export default class WelcomeScreen extends Component {
         </Text>
         <Button
           title={translate('Continue')}
-          onPress={() => this.props.navigation.navigate('Login') } color= {Theme.COLORS.BUTTON_COLOR}
+          onPress={() => this.props.navigation.navigate('Login')}
+          color={Theme.COLORS.BUTTON_COLOR}
         />
       </View>
     );
-  };
-};
+  }
+}
 
 
 const styles = StyleSheet.create({
