@@ -5,7 +5,12 @@
     "Continue": "Comencemos",
     "IntPass":"Introduce tu email y password para continuar",
     "Login":"Iniciar sesión",
-  
-    "test": "Buenos dias!"
-
+    "FirstName": "Nombre",
+    "LastName": "Apellido",
+    "Password": "Contraseña",
+    "test": "Buenos dias!",
+    "SignUpText": "Crear cuenta",
+    "Cancel": "Cancelar",
+    "SingUpDone": "Tu cuenta ha sido creada correctamente !",
+    "BackHome": "Volver al inicio"
 }
