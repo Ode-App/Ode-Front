@@ -1,11 +1,22 @@
-{
 
+{
+    "test": "Bon dia!",
     "Welcome": "Et donem la benvinguda a Ode!",
     "Description": "Troba companys de viatge i estalvia en els teus desplaçaments.",
     "Continue": "Comencem",
-    "IntPass":"Introdueix el teu email i contrasenya per a continuar",
+    "IntPass":"Introdueix el teu email i contrasenya per continuar",
     "Login":"Iniciar sessió",
-
-    "test": "Bon dia!"
-
+    "Rememail":"",
+    "Back":"Back",
+    "ResetPass":"Restablecer contraseña",
+    "ResetPassTitle":"Contraseña enviada",
+    "ResetPassbody":"Por favor, revise su correo electrónico. Se ha enviado un mail con las instrucciones para resetear el password",
+    "NewAccount":"Nuevo en Ode? Crea una cuenta aquí",
+    "FirstName": "Nom",
+    "LastName": "Cognom",
+    "Password": "Contrasenya",
+    "SignUpText": "Crear compte",
+    "Cancel": "Cancelar",
+    "SingUpDone": "La teva compta s'ha creat correctament !",
+    "BackHome": "Tornar  al inici"
 }
