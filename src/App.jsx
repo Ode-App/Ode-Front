@@ -9,7 +9,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import RegisterOkScreen from './screens/RegisterOkScreen';
 
-export default class App extends React.Component {
+export default class App extends React.PureComponent {
   render() {
     return <AppContainer />;
   }
@@ -38,8 +38,7 @@ const AppNavigator = createStackNavigator(
     },
     RegisterOk: {
       screen: RegisterOkScreen, navigationOptions: {headerShown: false},
-    },  
-   
+    },   
   },
   {
     initialRouteName: 'Welcome',
