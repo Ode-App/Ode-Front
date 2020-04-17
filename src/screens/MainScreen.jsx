@@ -44,102 +44,100 @@ export default class MainScreen extends Component {
     const { region, destination } = this.state;
     return (
       <View style={styles.container}>
-                <MapView  style={{ flex: 1 }}
-                    region={region}
-                    showsUserLocation
-                    loadingEnabled
-                    onPress={ (event) => this.setState({destination: event.nativeEvent.coordinate, markers: getMarkers(event.nativeEvent.coordinate, this.title, true)})}
-                    >
-                    {
-                        this.state.destination &&
-                            <CustomMarker 
-                                latitude= {destination.latitude} 
-                                longitude= {destination.longitude}
-                                title= {tilteDestination}
-                                destination= {true} /> 
-                    }
-                    {
-                        this.state.markers &&
-                        this.state.markers.map((marker, i) => ( 
-                            <CustomMarker 
-                                key= {i}
-                                latitude= {marker.coordinates.latitude} 
-                                longitude= {marker.coordinates.longitude} 
-                                title= {marker.title} 
-                                destination= {marker.destination} />))
-                    }                    
-                </MapView>
-                <Animated.ScrollView
-                    horizontal
-                    scrollEventThrottle={1}
-                    showsHorizontalScrollIndicator={false}
-                    snapToInterval={CARD_WIDTH}
-                    onScroll={Animated.event(
-                        [
-                        {
-                            nativeEvent: {
-                            contentOffset: {
-                                x: this.animation,
-                            },
-                            },
-                        },
-                        ],
-                        { useNativeDriver: true }
-                    )}
-                    style={styles.scrollView}
-                    contentContainerStyle={styles.paddingEnd}
-                    >
-                    {this.state.markers.map((marker, index) => (
-                        <View style={styles.card} key={index}>
-                        
-                        <View style={styles.textContent}>
-                            <Text numberOfLines={1} style={styles.cardtitle}>{marker.title}</Text>
-                            <Text numberOfLines={1} style={styles.cardDescription}>
-                            {marker.description}
-                            </Text>
-                        </View>
-                        </View>
-                    ))}
-                </Animated.ScrollView>
-                <View style={styles.avatar}>
-                  <Avatar
-                    rounded
-                    size="medium"
-                    onPress={() => this.props.navigation.navigate('Profile')}
-                    source={{uri: 'https://media-exp1.licdn.com/dms/image/C4D03AQGysqfNLtxpBQ/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=SDzkxqpWyMDr5SJPxTkurjYQK6XPfkbg4D-Kipxmiic',
-                    }}
-                  />
-                </View>
+          
+          <MapView  style={{ flex: 1 }}
+              region={region}
+              showsUserLocation
+              loadingEnabled
+              onPress={ (event) => this.setState({destination: event.nativeEvent.coordinate, markers: getMarkers(event.nativeEvent.coordinate, this.title, true)})}
+              >
+              {
+                  this.state.destination &&
+                      <CustomMarker 
+                          latitude= {destination.latitude} 
+                          longitude= {destination.longitude}
+                          title= {tilteDestination}
+                          destination= {true} /> 
+              }
+              {
+                  this.state.markers &&
+                  this.state.markers.map((marker, i) => ( 
+                      <CustomMarker 
+                          key= {i}
+                          latitude= {marker.coordinates.latitude} 
+                          longitude= {marker.coordinates.longitude} 
+                          title= {marker.title} 
+                          destination= {marker.destination} />))
+              }                    
+          </MapView>
+          <Avatar
+              rounded
+              size="medium"
+              containerStyle= {styles.avatar}
+              onPress={() => this.props.navigation.navigate('Profile')}
+              title="SB"
+              source={{uri: 'https://media-exp1.licdn.com/dms/image/C4D03AQGysqfNLtxpBQ/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=SDzkxqpWyMDr5SJPxTkurjYQK6XPfkbg4D-Kipxmiic',
+              
+              }}
+          />           
 
-                <ActionButton buttonColor={Theme.COLORS.PRIMARY}>
-                  <ActionButton.Item
-                    buttonColor={Theme.COLORS.BUTTON_COLOR}
-                    title="New trip"
-                    onPress={() => console.log('notes tapped!')}>
-                    <Icon name="ios-car" style={styles.actionButtonIcon} />
-                  </ActionButton.Item>
-                  <ActionButton.Item
-                    buttonColor={Theme.COLORS.BUTTON_COLOR}
-                    title="Schedule"
-                    onPress={() => {}}>
-                    <Icon
-                      name="ios-calendar"
-                      style={styles.actionButtonIcon}
-                    />
-                  </ActionButton.Item>
-                  <ActionButton.Item
-                    buttonColor={Theme.COLORS.BUTTON_COLOR}
-                    title="Explore trips"
-                    onPress={() => {}}>
-                    <Icon name="ios-search" 
-                    style={styles.actionButtonIcon} />
-                  </ActionButton.Item>
-                </ActionButton>
-            </View>
-      
-      <View style={styles.container}>
-        
-      </View>
+          <ActionButton buttonColor={Theme.COLORS.PRIMARY}>
+            <ActionButton.Item
+              buttonColor={Theme.COLORS.BUTTON_COLOR}
+              title="New trip"
+              onPress={() => console.log('notes tapped!')}>
+              <Icon name="ios-car" style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+            <ActionButton.Item
+              buttonColor={Theme.COLORS.BUTTON_COLOR}
+              title="Schedule"
+              onPress={() => {}}>
+              <Icon
+                name="ios-calendar"
+                style={styles.actionButtonIcon}
+              />
+            </ActionButton.Item>
+            <ActionButton.Item
+              buttonColor={Theme.COLORS.BUTTON_COLOR}
+              title="Explore trips"
+              onPress={() => {}}>
+              <Icon name="ios-search" 
+              style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+          </ActionButton>
+          <Animated.ScrollView
+              horizontal
+              scrollEventThrottle={1}
+              showsHorizontalScrollIndicator={false}
+              snapToInterval={CARD_WIDTH}
+              onScroll={Animated.event(
+                  [
+                  {
+                      nativeEvent: {
+                      contentOffset: {
+                          x: this.animation,
+                      },
+                      },
+                  },
+                  ],
+                  { useNativeDriver: true }
+              )}
+              style={styles.scrollView}
+              contentContainerStyle={styles.paddingEnd}
+              >
+              {this.state.markers.map((marker, index) => (
+                  <View style={styles.card} key={index}>
+                  
+                  <View style={styles.textContent}>
+                      <Text numberOfLines={1} style={styles.cardtitle}>{marker.title}</Text>
+                      <Text numberOfLines={1} style={styles.cardDescription}>
+                      {marker.description}
+                      </Text>
+                  </View>
+                  </View>
+              ))}
+          </Animated.ScrollView>
+      </View>      
     );
   }
 
@@ -148,15 +146,14 @@ export default class MainScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    backgroundColor: '#FFFFFF',
+    flex:1,
+    display: "flex",
+    flexDirection: "column"
   },
   avatar: {
-    margin: 40,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-end',
+    position: 'absolute',
+    top: '7%',
+    right: '6%'
   },
   welcome: {
     fontSize: 20,
