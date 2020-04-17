@@ -76,6 +76,16 @@ export default class LoginScreen extends Component {
                         />
                     }
                 />
+                <Input
+                    placeholder={translate('RepeatPassword')}
+                    leftIcon={
+                        <Icon
+                            Icon="sign-in"
+                            size={19}
+                            color='black'
+                        />
+                    }
+                />
                 <TouchableOpacity
                     title="Crear cuenta"
                     style={styles.btn_confirm}

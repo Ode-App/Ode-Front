@@ -15,6 +15,7 @@
     "FirstName": "Nom",
     "LastName": "Cognom",
     "Password": "Contrasenya",
+    "RepeatPassword": "Repetir Contrasenya",
     "SignUpText": "Crear compte",
     "Cancel": "Cancelar",
     "SingUpDone": "La teva compta s'ha creat correctament !",

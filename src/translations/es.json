@@ -15,6 +15,7 @@
     "FirstName": "Nombre",
     "LastName": "Apellido",
     "Password": "Contraseña",
+    "RepeatPassword": "Repetir Contraseña",
     "SignUpText": "Crear cuenta",
     "Cancel": "Cancelar",
     "SingUpDone": "¡Tu cuenta ha sido creada correctamente!",
