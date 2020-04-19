@@ -16,6 +16,8 @@
     "expo-updates": "~0.1.0",
     "i18n-js": "^3.5.1",
     "lodash.memoize": "^4.1.2",
+    "query-string": "^6.12.1",
+    "querystring": "^0.2.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "~0.61.5",

@@ -6,9 +6,34 @@ import {
 import Theme from '../constants/Theme';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import UserApi from '../../api-client/src/api/UserApi.js';
+import User from '../../api-client/src/model/User.js';
 
 
 export default class LoginScreen extends Component {
+
+
+    return_register = () => {
+        Alert.alert("DONE")
+    }
+
+    _onPressButton = () => {
+        //Alert.alert("Lol");
+        let user = new User();
+        /*user.username = "Martona19";
+        user.password = "1234";
+        user.firstName = "Marta";
+         user.lastName = "Barrachina";*/
+
+        //user = User.initialize(user, "Marta", "1234");
+        user.username = "Roger"
+        user.username = "Roger1234"
+
+        UserApi.v1UserRegisterPost(user, this.return_register());
+
+    }
+
+
     render() {
         return (
             <View style={
@@ -89,7 +114,8 @@ export default class LoginScreen extends Component {
                 <TouchableOpacity
                     title="Crear cuenta"
                     style={styles.btn_confirm}
-                    onPress={() => this.props.navigation.navigate('RegisterOk')}
+                    /*onPress={() => this.props.navigation.navigate('RegisterOk')}*/
+                    onPress={() => this._onPressButton()}
                 >
                     <Text textAnchor="middle" style={styles.btn_text}>{translate('SignUpText')}</Text>
 
