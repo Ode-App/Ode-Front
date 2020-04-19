@@ -147,3 +147,25 @@ Generate API cliente using the swagger JSON of the backend. It is generated usin
 In order to regenerate it, run the `npm run swagger` script. The Swagger json path can be changed if needed.
 
 It will generate the models and the API calls on the folder `api-client`.
+
+## Using fetch
+In order to use react native fetch, we are using a new class that extends the generated ones.
+
+They are located on `src/services/ode-api.js` and has a CustomApiClient that overrides the callApi method and a new UsersApi that uses the new CustomApiClient's callApi using fetch.
+
+In order to use the fetch, it can be done by:
+```javascript
+// Import the UsersApi from '../services/ode-api'
+import { UsersApi } from '../services/ode-api';
+
+// Initialise the UsersApi object. 
+const userApiCall = new UsersApi();
+// Use the userApiCall to find the method used and attach the object to send. Use Promise to retrieve the response.
+userApiCall.v1UserAuthenticatePost({
+  username: 'Luard',
+  password: 'luard123',
+})
+  .then(async (response) => { return response.json(); })
+  .then((responseJSON) => { console.log(`Mensaje: ${responseJSON}`); })
+  .catch((error) => { console.error(`Error: ${error.message}`); });
+```
