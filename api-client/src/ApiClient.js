@@ -34,7 +34,7 @@ class ApiClient {
          * @type {String}
          * @default http://localhost
          */
-    this.basePath = 'http://localhost'.replace(/\/+$/, '');
+    this.basePath = 'https://ode-back-staging.herokuapp.com';
 
     /**
          * The authentication methods to be included for all API calls.

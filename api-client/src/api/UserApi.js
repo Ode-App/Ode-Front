@@ -86,7 +86,7 @@ export default class UserApi {
      * @param {module:model/User} user
      * @param {module:api/UserApi~v1UserRegisterPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-  v1UserRegisterPost(user, callback) {
+  static v1UserRegisterPost(user, callback) {
     const postBody = user;
     // verify the required parameter 'user' is set
     if (user === undefined || user === null) {
