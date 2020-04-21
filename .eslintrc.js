@@ -4,6 +4,9 @@ module.exports = {
       'node': true,
       'jest': true,
     },
+    'globals': {
+      'fetch': false
+    },
     'extends': 'airbnb',
     'rules': {
       'no-underscore-dangle': 0,
