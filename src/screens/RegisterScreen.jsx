@@ -6,9 +6,42 @@ import {
 import Theme from '../constants/Theme';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { UsersApi } from '../services/ode-api';
 
+
+function signUpOut(){
+    // Initialise the UsersApi object.
+        const userApiCall = new UsersApi();
+        // Use the userApiCall to find the method used and attach the object to send. Use Promise to retrieve the response.
+        userApiCall.v1UserAuthenticatePost({
+            username: 'Paki',
+            password: 'paki1234',
+        }).then(async (response) => {
+             console.log("SUCCESS!")
+            const json = response;
+             console.log(response.statusText)
+            console.log(json)
+
+            return json;
+            //
+        }).catch((error) => {
+                console.error(`Error: ${error.message}`);
+            });
+}
 
 export default class LoginScreen extends Component {
+
+    return_register = () => {
+        Alert.alert("DONE")
+        this.props.navigation.navigate('RegisterOk')
+    }
+
+    signUp = () => {
+
+       signUpOut();
+       this.return_register()
+    }
+
     render() {
         return (
             <View style={
@@ -79,7 +112,7 @@ export default class LoginScreen extends Component {
                 <TouchableOpacity
                     title="Crear cuenta"
                     style={styles.btn_confirm}
-                    onPress={() => this.props.navigation.navigate('RegisterOk')}
+                    onPress={() => this.signUp()}
                 >
                     <Text textAnchor="middle" style={styles.btn_text}>{translate('SignUpText')}</Text>
 
