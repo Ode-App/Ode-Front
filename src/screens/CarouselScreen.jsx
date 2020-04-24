@@ -69,7 +69,7 @@ export default class screens extends Component {
       longitudeDelta: 0.040142817690068,
     },
   };
-
+  
   async componentDidMount() {
     navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
         this.setState({
@@ -103,7 +103,7 @@ export default class screens extends Component {
       if (index <= 0) {
         index = 0;
       }
-
+      
       clearTimeout(this.regionTimeout);
       this.regionTimeout = setTimeout(() => {
         if (this.index !== index) {
@@ -219,9 +219,8 @@ export default class screens extends Component {
                 </Text>
                 <Text numberOfLines={2}>Origen: {marker.origin}
                 </Text>
-                <Icon
-                name='chevron-down'
-                type='font-awesome'/>
+                <Icon name="ios-arrow-down"  
+                size={40}/>
                 <Text numberOfLines={2}>Destino: {marker.destiny}</Text>
                 <Avatar 
               rounded
@@ -235,15 +234,15 @@ export default class screens extends Component {
                
               <Icon
                 raised
-                name='comment-o'
-                type='font-awesome'
+                name='ios-chatbubbles'
                 color='#f50'
+                size={40}
                 onPress={() => console.log('hello')} />
                <Icon
                 raised
-                name='user-plus'
-                type='font-awesome'
+                name='ios-person-add'
                 color='#008000'
+                size={40}
                 onPress={() => console.log('hello')} />
                 </View>
                 
