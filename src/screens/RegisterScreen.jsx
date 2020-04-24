@@ -1,5 +1,6 @@
 import {translate} from '../translations/config/i18nConfig';
 import React, {Component} from 'react';
+import {useRef} from 'react';
 import {
     StyleSheet, View, Image, Text, Button, Alert, TouchableOpacity
 } from 'react-native';
@@ -13,31 +14,37 @@ function signUpOut(){
     // Initialise the UsersApi object.
         const userApiCall = new UsersApi();
         // Use the userApiCall to find the method used and attach the object to send. Use Promise to retrieve the response.
-        userApiCall.v1UserAuthenticatePost({
+        userApiCall.v1UserRegisterPost({
             username: 'Paki',
             password: 'paki1234',
         }).then(async (response) => {
-             console.log("SUCCESS!")
             const json = response;
-             console.log(response.statusText)
-            console.log(json)
-
             return json;
-            //
         }).catch((error) => {
                 console.error(`Error: ${error.message}`);
             });
 }
+const input = React.createRef();
 
-export default class LoginScreen extends Component {
+
+export default class RegisterScreen extends Component {
+
+    constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
+
+
 
     return_register = () => {
-        Alert.alert("DONE")
         this.props.navigation.navigate('RegisterOk')
     }
 
     signUp = () => {
 
+        const node = this.myRef.current.value;
+        console.log(node)
+        alert('A name was submitted: ' + node);
        signUpOut();
        this.return_register()
     }
@@ -68,6 +75,7 @@ export default class LoginScreen extends Component {
                 </Text>
                 <Input
                     placeholder={translate('FirstName')}
+                    ref={this.myRef}
                     leftIcon={
                         <Icon
                             Icon="sign-in"
@@ -75,6 +83,7 @@ export default class LoginScreen extends Component {
                             color='black'
                         />
                     }
+
                 />
 
                 <Input
