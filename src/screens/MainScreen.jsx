@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ActionButton from 'react-native-action-button';
 import Theme from '../constants/Theme';
-import { Avatar } from 'react-native-elements';
+import { Avatar, SearchBar  } from 'react-native-elements';
 import { StyleSheet,
     Text,
     View,
@@ -39,12 +39,11 @@ export default class MainScreen extends Component {
           })
        }
   )}
-    
+
   render() {
     const { region, destination } = this.state;
     return (
       <View style={styles.container}>
-          
           <MapView  style={{ flex: 1 }}
               region={region}
               showsUserLocation
@@ -70,14 +69,12 @@ export default class MainScreen extends Component {
                           destination= {marker.destination} />))
               }                    
           </MapView>
-          <Avatar
+          <Avatar containerStyle= {styles.avatar}
               rounded
               size="medium"
-              containerStyle= {styles.avatar}
               onPress={() => this.props.navigation.navigate('Profile')}
               title="SB"
               source={{uri: 'https://media-exp1.licdn.com/dms/image/C4D03AQGysqfNLtxpBQ/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=SDzkxqpWyMDr5SJPxTkurjYQK6XPfkbg4D-Kipxmiic',
-              
               }}
           />           
 
@@ -105,38 +102,6 @@ export default class MainScreen extends Component {
               style={styles.actionButtonIcon} />
             </ActionButton.Item>
           </ActionButton>
-          <Animated.ScrollView
-              horizontal
-              scrollEventThrottle={1}
-              showsHorizontalScrollIndicator={false}
-              snapToInterval={CARD_WIDTH}
-              onScroll={Animated.event(
-                  [
-                  {
-                      nativeEvent: {
-                      contentOffset: {
-                          x: this.animation,
-                      },
-                      },
-                  },
-                  ],
-                  { useNativeDriver: true }
-              )}
-              style={styles.scrollView}
-              contentContainerStyle={styles.paddingEnd}
-              >
-              {this.state.markers.map((marker, index) => (
-                  <View style={styles.card} key={index}>
-                  
-                  <View style={styles.textContent}>
-                      <Text numberOfLines={1} style={styles.cardtitle}>{marker.title}</Text>
-                      <Text numberOfLines={1} style={styles.cardDescription}>
-                      {marker.description}
-                      </Text>
-                  </View>
-                  </View>
-              ))}
-          </Animated.ScrollView>
       </View>      
     );
   }
@@ -155,48 +120,9 @@ const styles = StyleSheet.create({
     top: '7%',
     right: '6%'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
   actionButtonIcon: {
     fontSize: 20,
-    height: 22,
+    height: 29,
     color: 'white',
   },
-  scrollView: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0
-  },
-  paddingEnd: {
-    paddingRight: 10,
-    paddingLeft: 10
-  },
-  card: {
-    padding: 10,
-    elevation: 2,
-    backgroundColor: "#FFF",
-    shadowColor: "#000",
-    shadowRadius: 5,
-    shadowOpacity: 0.3,
-    shadowOffset: { x: 2, y: -2 },
-    height: CARD_HEIGHT,
-    width: CARD_WIDTH,
-    overflow: "hidden",
-  },
-  textContent: {
-    flex: 1,
-  },
-  cardtitle: {
-    fontSize: 12,
-    marginTop: 5,
-    fontWeight: "bold",
-  },
-  cardDescription: {
-    fontSize: 12,
-    color: "#444",
-  }
 });
