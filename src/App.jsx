@@ -45,7 +45,7 @@ const AppNavigator = createStackNavigator(
     },     
   },
   {
-    initialRouteName: 'Explore',
+    initialRouteName: 'Main',
   },
 );
 

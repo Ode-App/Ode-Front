@@ -1,85 +1,73 @@
 import React, { Component } from 'react';
+import { SearchBar, Avatar } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
-import ActionButton from 'react-native-action-button';
 import Theme from '../constants/Theme';
-import { Avatar, SearchBar  } from 'react-native-elements';
-import { StyleSheet,
-    Text,
-    View,
-    Animated,
-    Dimensions, } from 'react-native';
+import ActionButton from 'react-native-action-button';
 import MapView from 'react-native-maps';
-import {getMarkers} from '../components/MarkerController';
-import CustomMarker from '../components/CustomMarker';
-
-const SideMenu = require('react-native-side-menu');
-const tilteDestination = 'Destinación';
-const { height } = Dimensions.get("window");
-const CARD_HEIGHT = height / 3;
-const CARD_WIDTH = CARD_HEIGHT ;
-
-
-export default class MainScreen extends Component {
+import { StyleSheet,
+  View, Dimensions} from 'react-native';
+import _default from 'expo/build/Linking/Linking';
+  
+export default class App extends React.Component {
   state = {
-        region: null,
-        destination: null,
-        markers: []
-    }
+    search: '',
+    region: null,
+    destination: null,
+    markers: []
 
+  };
   async componentDidMount() {
-      navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
-          this.setState({
-              region: {
-                  latitude,
-                  longitude,
-                  latitudeDelta: 0.03,
-                  longitudeDelta: 0.03,
-              },
-              marker: null
-          })
-       }
-  )}
+    navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+        this.setState({
+            region: {
+                latitude,
+                longitude,
+                latitudeDelta: 0.05,
+                longitudeDelta: 0.05,
+            },
+            marker: null
+        })
+     }
+)}
+
+
+  updateSearch = search => {
+    this.setState({ search });
+  };
 
   render() {
-    const { region, destination } = this.state;
+    const { region, destination ,search } = this.state;
+
     return (
       <View style={styles.container}>
-          <MapView  style={{ flex: 1 }}
-              region={region}
-              showsUserLocation
-              loadingEnabled
-              onPress={ (event) => this.setState({destination: event.nativeEvent.coordinate, markers: getMarkers(event.nativeEvent.coordinate, this.title, true)})}
-              >
-              {
-                  this.state.destination &&
-                      <CustomMarker 
-                          latitude= {destination.latitude} 
-                          longitude= {destination.longitude}
-                          title= {tilteDestination}
-                          destination= {true} /> 
-              }
-              {
-                  this.state.markers &&
-                  this.state.markers.map((marker, i) => ( 
-                      <CustomMarker 
-                          key= {i}
-                          latitude= {marker.coordinates.latitude} 
-                          longitude= {marker.coordinates.longitude} 
-                          title= {marker.title} 
-                          destination= {marker.destination} />))
-              }                    
-          </MapView>
+        <View style={styles.header} /*Header*/> 
+          <View style={styles.subheader}>
+          <SearchBar containerStyle={styles.searchbar}
+            round
+            showCancel
+            lightTheme
+            placeholder="Type Here..."
+            onChangeText={this.updateSearch}
+            value={search}
+          />
           <Avatar containerStyle= {styles.avatar}
-              rounded
-              size="medium"
-              onPress={() => this.props.navigation.navigate('Profile')}
-              title="SB"
-              source={{uri: 'https://media-exp1.licdn.com/dms/image/C4D03AQGysqfNLtxpBQ/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=SDzkxqpWyMDr5SJPxTkurjYQK6XPfkbg4D-Kipxmiic',
-              }}
-          />           
-
-          <ActionButton buttonColor={Theme.COLORS.PRIMARY}>
-            <ActionButton.Item
+                rounded
+                size="medium"
+                onPress={() => this.props.navigation.navigate('Profile')}
+                title="SB"
+                source={{uri: 'https://media-exp1.licdn.com/dms/image/C4D03AQGysqfNLtxpBQ/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=SDzkxqpWyMDr5SJPxTkurjYQK6XPfkbg4D-Kipxmiic',
+                }}
+            />   
+            </View>
+        </View >
+        <MapView style={styles.mapView}
+          showsUserLocation
+          loadingEnabled
+          region={region}
+        >
+        </MapView>
+        <ActionButton buttonColor={Theme.COLORS.PRIMARY}/*Action Button*/>
+        <ActionButton.Item
               buttonColor={Theme.COLORS.BUTTON_COLOR}
               title="New trip"
               onPress={() => console.log('notes tapped!')}>
@@ -97,32 +85,46 @@ export default class MainScreen extends Component {
             <ActionButton.Item
               buttonColor={Theme.COLORS.BUTTON_COLOR}
               title="Explore trips"
-              onPress={() => {}}>
-              <Icon name="ios-search" 
-              style={styles.actionButtonIcon} />
+              onPress={() => this.props.navigation.navigate('Explore')}>
+              <Icon name="ios-search"  
+              style={styles.actionButtonIcon} 
+              />
             </ActionButton.Item>
-          </ActionButton>
-      </View>      
+
+        </ActionButton>
+      </View>
     );
   }
-
-
 }
-
 const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    display: "flex",
-    flexDirection: "column"
+  
+  mapView:{
+    flex: 1,
   },
-  avatar: {
-    position: 'absolute',
-    top: '7%',
-    right: '6%'
+  container:{
+    flex: 1,
+  },
+  header:{
+    flexDirection: 'column',
+  },
+  avatar:{
+    right: 10,
+    marginLeft: 5
+  },
+  subheader:{
+    marginTop:25,
+    flexDirection: 'row',
+    backgroundColor: '#ffff',
+    alignItems: 'center'
+  },
+  searchbar:{
+    flex:1,
+    backgroundColor: '#ffff',
   },
   actionButtonIcon: {
     fontSize: 20,
-    height: 29,
+    height: 20,
     color: 'white',
   },
-});
+}
+)
