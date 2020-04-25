@@ -1,39 +1,49 @@
 import {translate} from '../translations/config/i18nConfig';
 import React, {Component} from 'react';
-import {useRef} from 'react';
 import {
     StyleSheet, View, Image, Text, Button, Alert, TouchableOpacity
 } from 'react-native';
 import Theme from '../constants/Theme';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { UsersApi } from '../services/ode-api';
+import {UsersApi} from '../services/ode-api';
 
+function signUpOut(firstName, lastName, email, username, pswd){
 
-function signUpOut(){
+console.log("SIGN UP!")
     // Initialise the UsersApi object.
-        const userApiCall = new UsersApi();
-        // Use the userApiCall to find the method used and attach the object to send. Use Promise to retrieve the response.
-        userApiCall.v1UserRegisterPost({
-            username: 'Paki',
-            password: 'paki1234',
-        }).then(async (response) => {
-            const json = response;
-            return json;
-        }).catch((error) => {
-                console.error(`Error: ${error.message}`);
-            });
+    const userApiCall = new UsersApi();
+    // Use the userApiCall to find the method used and attach the object to send. Use Promise to retrieve the response.
+    userApiCall.v1UserRegisterPost({
+        username: username,
+        password: pswd,
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+
+    }).then(async (response) => {
+        const json = response;
+        //this.props.navigation.navigate('RegisterOk')
+        return json;
+    }).catch((error) => {
+        //alert(error.message)
+        return error.message
+        console.error(`Error: ${error.message}`);
+    });
 }
-const input = React.createRef();
 
 
 export default class RegisterScreen extends Component {
 
     constructor(props) {
-    super(props);
-    this.myRef = React.createRef();
-  }
-
+        super(props);
+        this.state = {
+            first_name: '',
+            last_name: '',
+            email: '',
+            password: ''
+        };
+    }
 
 
     return_register = () => {
@@ -41,12 +51,10 @@ export default class RegisterScreen extends Component {
     }
 
     signUp = () => {
+        const resp = signUpOut(this.state.first_name, this.state.last_name, this.state.email, this.state.first_name, this.state.password);
+        console.log(resp);
+        this.return_register();
 
-        const node = this.myRef.current.value;
-        console.log(node)
-        alert('A name was submitted: ' + node);
-       signUpOut();
-       this.return_register()
     }
 
     render() {
@@ -75,7 +83,7 @@ export default class RegisterScreen extends Component {
                 </Text>
                 <Input
                     placeholder={translate('FirstName')}
-                    ref={this.myRef}
+                    onChangeText={(first_name) => this.setState({first_name})}
                     leftIcon={
                         <Icon
                             Icon="sign-in"
@@ -88,6 +96,7 @@ export default class RegisterScreen extends Component {
 
                 <Input
                     placeholder={translate('LastName')}
+                    onChangeText={(last_name) => this.setState({last_name})}
                     leftIcon={
                         <Icon
                             Icon="sign-in"
@@ -99,6 +108,7 @@ export default class RegisterScreen extends Component {
 
                 <Input
                     placeholder='Email'
+                    onChangeText={(email) => this.setState({email})}
                     leftIcon={
                         <Icon
                             Icon='user'
@@ -110,6 +120,7 @@ export default class RegisterScreen extends Component {
 
                 <Input
                     placeholder={translate('Password')}
+                    onChangeText={(password) => this.setState({password})}
                     leftIcon={
                         <Icon
                             Icon="sign-in"
