@@ -17,7 +17,7 @@ export default {
     INPUT: '#DCDCDC',
     ACTIVE: '#9C26B0',
     BUTTON_COLOR: '#9C26B0',
-    BUTTON_COLOR_2:'#909791',
+    BUTTON_COLOR_2: '#909791',
     PLACEHOLDER: '#9FA5AA',
     SWITCH_ON: '#9C26B0',
     SWITCH_OFF: '#D4D9DD',

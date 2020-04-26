@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, Image, Text, Button, TouchableOpacity,
+  StyleSheet, View, Image, Text, Button,
 } from 'react-native';
 import Theme from '../constants/Theme';
 import { translate } from '../translations/config/i18nConfig';
@@ -10,12 +10,11 @@ export default class WelcomeScreen extends Component {
     return (
       <View style={
           {
+            backgroundColor: '#FFFFFF',
             flex: 1,
-            marginTop: 80,
             flexDirection: 'column',
             justifyContent: 'space-around',
             alignItems: 'center',
-            marginVertical: 90,
           }
         }
       >

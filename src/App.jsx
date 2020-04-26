@@ -35,14 +35,14 @@ const AppNavigator = createStackNavigator(
       screen: MainScreen, navigationOptions: { headerShown: false },
     },
     Register: {
-      screen: RegisterScreen, navigationOptions: {headerShown: false},
+      screen: RegisterScreen, navigationOptions: { headerShown: false },
     },
     RegisterOk: {
-      screen: RegisterOkScreen, navigationOptions: {headerShown: false},
-    }, 
+      screen: RegisterOkScreen, navigationOptions: { headerShown: false },
+    },
     Explore: {
-      screen: CarouselScreen, navigationOptions: {headerShown: false},
-    },     
+      screen: CarouselScreen, navigationOptions: { headerShown: false },
+    },
   },
   {
     initialRouteName: 'Welcome',

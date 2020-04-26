@@ -1,38 +1,40 @@
-import { translate } from '../translations/config/i18nConfig';
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { Avatar, ListItem  } from 'react-native-elements';
+import {
+  StyleSheet, Text, View, TouchableOpacity,
+} from 'react-native';
+import { Avatar, ListItem } from 'react-native-elements';
+import { translate } from '../translations/config/i18nConfig';
+
 const list = [
   {
     title: 'Personal data',
-    icon: 'perm-identity'
+    icon: 'perm-identity',
   },
   {
     title: 'Appointments',
-    icon: 'av-timer'
+    icon: 'av-timer',
   },
   {
     title: 'Trips',
-    icon: 'flight-takeoff'
+    icon: 'flight-takeoff',
   },
   {
     title: 'Friends',
-    icon: 'supervisor-account'
+    icon: 'supervisor-account',
   },
   {
     title: 'Settings',
-    icon: 'settings'
+    icon: 'settings',
   }, {
     title: 'Upgrade account',
-    icon: 'call-made'
+    icon: 'call-made',
   },
-  
-]
+
+];
 
 
 export default class MainScreen extends Component {
-  
   render() {
     return (
       <View style={styles.container}>
@@ -40,7 +42,7 @@ export default class MainScreen extends Component {
           <Avatar
             rounded
             size="large"
-           /* showEditButton*/
+           /* showEditButton */
             title="SB"
             source={{
               uri: 'https://media-exp1.licdn.com/dms/image/C4D03AQGysqfNLtxpBQ/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=SDzkxqpWyMDr5SJPxTkurjYQK6XPfkbg4D-Kipxmiic',
@@ -51,12 +53,12 @@ export default class MainScreen extends Component {
           Sergio Benito
         </Text>
         <View>
-        {
+          {
           list.map((item, i) => (
             <ListItem
               key={i}
               title={item.title}
-              leftIcon={{ name: item.icon}}
+              leftIcon={{ name: item.icon }}
               bottomDivider
               chevron
             />
@@ -64,7 +66,7 @@ export default class MainScreen extends Component {
         }
         </View>
       </View>
-      
+
     );
   }
 }
