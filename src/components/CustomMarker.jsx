@@ -53,7 +53,7 @@ export default class CustomMarker extends Component {
     return (
       <MapView.Marker
         key={this.state.id}
-        coordinate= {{ latitude: this.state.latitude, longitude: this.state.longitude }}
+        coordinate={{ latitude: this.state.latitude, longitude: this.state.longitude }}
         title={this.state.title}
         pinColor={pinColor}
       />

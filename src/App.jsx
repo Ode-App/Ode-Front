@@ -8,6 +8,7 @@ import MainScreen from './screens/MainScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import RegisterOkScreen from './screens/RegisterOkScreen';
+import CarouselScreen from './screens/CarouselScreen';
 
 export default class App extends React.PureComponent {
   render() {
@@ -34,11 +35,14 @@ const AppNavigator = createStackNavigator(
       screen: MainScreen, navigationOptions: { headerShown: false },
     },
     Register: {
-      screen: RegisterScreen, navigationOptions: {headerShown: false},
+      screen: RegisterScreen, navigationOptions: { headerShown: false },
     },
     RegisterOk: {
-      screen: RegisterOkScreen, navigationOptions: {headerShown: false},
-    },   
+      screen: RegisterOkScreen, navigationOptions: { headerShown: false },
+    },
+    Explore: {
+      screen: CarouselScreen, navigationOptions: { headerShown: false },
+    },
   },
   {
     initialRouteName: 'Welcome',
