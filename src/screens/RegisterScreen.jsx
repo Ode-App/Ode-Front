@@ -8,9 +8,8 @@ import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {UsersApi} from '../services/ode-api';
 
-function signUpOut(firstName, lastName, email, username, pswd){
+function signUpOut(firstName, lastName, email, username, pswd) {
 
-console.log("SIGN UP!")
     // Initialise the UsersApi object.
     const userApiCall = new UsersApi();
     // Use the userApiCall to find the method used and attach the object to send. Use Promise to retrieve the response.
@@ -22,13 +21,15 @@ console.log("SIGN UP!")
         email: email
 
     }).then(async (response) => {
-        const json = response;
+        const json = response.data;
         //this.props.navigation.navigate('RegisterOk')
+        console.log("THEN", response.data)
         return json;
-    }).catch((error) => {
+    }).catch(error => {
         //alert(error.message)
+        console.error(`Error: ${error}`);
         return error.message
-        console.error(`Error: ${error.message}`);
+
     });
 }
 
