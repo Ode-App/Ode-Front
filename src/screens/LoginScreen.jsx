@@ -6,8 +6,50 @@ import { Input, SocialIcon } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Theme from '../constants/Theme';
 import { translate } from '../translations/config/i18nConfig';
+import {UsersApi} from '../services/ode-api';
+
+function signInOut(username, pswd) {
+    // Initialise the UsersApi object.
+    const userApiCall = new UsersApi();
+    // Use the userApiCall to find the method used and attach the object to send. Use Promise to retrieve the response.
+    userApiCall.v1UserAuthenticatePost({
+        username: username,
+        password: pswd
+
+    }).then(async (response) => {
+        const json = response;
+        console.log("RESPONSE", response)
+        return json;
+    }).catch((error) => {
+        console.log("ERROR", error)
+        console.error(`Error: ${error.message}`);
+        return error.message
+
+    });
+
+}
+
 
 export default class LoginScreen extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: ''
+        };
+    }
+
+    return_register = () => {
+        this.props.navigation.navigate('Main')
+    }
+
+    signIn = () => {
+        const resp = signInOut(this.state.username, this.state.password);
+        this.return_register();
+
+    }
+
   render() {
     return (
       <View style={
@@ -32,7 +74,8 @@ export default class LoginScreen extends Component {
         </Text>
 
         <Input
-          placeholder="Email"
+          placeholder="UserName"
+          onChangeText={(username) => this.setState({username})}
           leftIcon={(
             <Icon
               Icon="user"
@@ -43,6 +86,7 @@ export default class LoginScreen extends Component {
         />
         <Input
           placeholder="Password"
+          onChangeText={(password) => this.setState({password})}
           leftIcon={(
             <Icon
               Icon="sign-in"
@@ -60,8 +104,10 @@ export default class LoginScreen extends Component {
         <View style={styles.fixToText}>
           <Button
             title="Iniciar sesión"
-            onPress={() => this.props.navigation.navigate('Main')}
+            //onPress={() => this.props.navigation.navigate('Main')}
             color={Theme.COLORS.BUTTON_COLOR}
+            onPress={() => this.signIn()}
+
           />
         </View>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
@@ -88,7 +134,6 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
 
   tinyLogo: {
-    
     marginTop: 15,
     width: 90,
     height: 90,
