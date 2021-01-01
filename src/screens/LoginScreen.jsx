@@ -19,10 +19,8 @@ function signInOut(username, pswd) {
     }).then(async (response) => {
         const json = response;
         console.log("RESPONSE", response)
-         //this.props.navigation.navigate('RegisterOk')
         return json;
     }).catch((error) => {
-        //alert(error.message)
         console.log("ERROR", error)
         console.error(`Error: ${error.message}`);
         return error.message
@@ -48,7 +46,6 @@ export default class LoginScreen extends Component {
 
     signIn = () => {
         const resp = signInOut(this.state.username, this.state.password);
-        console.log(resp.json());
         this.return_register();
 
     }
