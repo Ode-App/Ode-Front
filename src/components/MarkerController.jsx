@@ -23,15 +23,14 @@ const marker3 = {
     longitude: 2.1589899,
   },
   title: 'Prueba3',
-  destination: false
+  destination: false,
 };
 
 
-
 export function getMarkers(coordinates, title, destination) {
-  let markers = [];
+  const markers = [];
   // getGroupCoordinates
-  //markers.push({ coordinates, title, destination });
+  // markers.push({ coordinates, title, destination });
   markers.push(marker1);
   markers.push(marker2);
   markers.push(marker3);
